@@ -1,5 +1,6 @@
 import torch
 from torch import nn, Tensor
+import torch.nn.functional as F
 from torchtext.datasets import YelpReviewFull
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 from torch.utils.data import dataset
@@ -57,6 +58,7 @@ class PositionalEncoder(nn.Module):
         return self.dropout(x)
 
 
+device = torch.device('cpu')
 
 
 #Prepare data
